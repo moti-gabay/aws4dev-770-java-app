@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo "[PRE_BUILD] Nothing to do in the pre-build phase..."
+  build:
+    commands:
+      - echo "[BUILD] Started on " $(date)
+      - mvn install
+  post_build:
+    commands:
+      - echo "[BUILD] Completed on " $(date)
+      - echo "[POST_BUILD] Nothing to do on the post-build phase..."
+artifacts:
+  files:
+    - target/messageUtil-1.0.jar
